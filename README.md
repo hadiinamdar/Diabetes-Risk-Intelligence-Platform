@@ -1,142 +1,373 @@
-# 🩸 DiabetesAI — Medical Intelligence Dashboard
+# 🩸 DiabetesAI
 
-An interactive **machine-learning based diabetes risk assessment dashboard** built with **Python, Streamlit, Pandas, NumPy, Plotly, and Scikit-Learn**.
+### Medical Intelligence & Diabetes Risk Assessment Dashboard
 
-The application provides a professional clinical-style interface for entering patient measurements, generating a diabetes-risk prediction using a **Decision Tree Classifier**, visualizing the result, maintaining prediction history, and exploring the training dataset.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Streamlit-Interactive%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"/>
+  <img src="https://img.shields.io/badge/Pandas-Data%20Analytics-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Plotly-Interactive%20Charts-3F4F75?style=for-the-badge&logo=plotly&logoColor=white" alt="Plotly"/>
+</p>
 
-> **Important:** This project is intended for **educational, portfolio, and analytical demonstration purposes only**. It is not a medical diagnostic system and must not be used as a substitute for evaluation by a qualified healthcare professional.
+<p align="center">
+  <strong>AI-powered healthcare analytics • Risk assessment • Interactive visualization • Machine learning</strong>
+</p>
 
----
-
-## 📌 Project Overview
-
-DiabetesAI is designed as a decision-support style application that evaluates a patient's clinical measurements using a previously trained machine-learning classification model.
-
-The dashboard includes:
-
-- Patient assessment and diabetes-risk prediction
-- Probability-based risk classification
-- Interactive risk visualizations
-- Patient metric comparison
-- Prediction history logging
-- Dataset exploration and basic EDA
-- Model architecture and feature-order information
-- Educational clinical insights
-- Downloadable prediction reports
-
----
-
-## ✨ Key Features
-
-### 🔮 1. Prediction Engine
-
-The Prediction Engine accepts **8 numerical patient features**:
-
-| Feature | Description |
-|---|---|
-| Pregnancies | Number of times pregnant |
-| Glucose | Plasma glucose concentration |
-| BloodPressure | Diastolic blood pressure |
-| SkinThickness | Triceps skin fold thickness |
-| Insulin | 2-hour serum insulin |
-| BMI | Body Mass Index |
-| DiabetesPedigreeFunction | Diabetes pedigree score |
-| Age | Patient age in years |
-
-The application sends the values to the loaded machine-learning model and returns:
-
-- Model classification
-- Diabetes probability
-- Assessed risk tier
-- Classification confidence
-- Risk probability gauge
-- Normalized patient-metric visualization
-- Contributory insights
-- Downloadable CSV clinical summary
+<p align="center">
+  <a href="#-overview">Overview</a> •
+  <a href="#-features">Features</a> •
+  <a href="#-architecture">Architecture</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-future-enhancements">Roadmap</a>
+</p>
 
 ---
 
-### 📊 2. Risk Classification
+## 🧠 Overview
 
-The application categorizes the calculated diabetes probability into four risk tiers:
+**DiabetesAI** is an interactive machine-learning dashboard designed to demonstrate how predictive analytics can be integrated into a healthcare-oriented decision-support application.
 
-| Probability | Risk Category |
-|---:|---|
-| `0–30%` | 🟢 Low Risk |
-| `>30–60%` | 🟡 Moderate Risk |
-| `>60–80%` | 🟠 High Risk |
-| `>80–100%` | 🔴 Very High Risk |
+The application combines a trained **Decision Tree Classifier**, **Streamlit**, **Pandas**, **NumPy**, **Scikit-Learn**, and **Plotly** to create a professional clinical-style analytical interface.
 
-The final prediction itself is returned by the classification model as:
+Users can enter eight clinical measurements, execute a machine-learning assessment, visualize the resulting probability, review risk classification, explore historical predictions, inspect the training dataset, and examine the model configuration.
 
-- `0` → No diabetes classification
-- `1` → Diabetes classification
+> ⚠️ **Educational Project:** DiabetesAI is intended for educational, portfolio, and analytical demonstration purposes. It is **not a medical diagnostic system** and must not replace evaluation by a qualified healthcare professional.
 
 ---
 
-### 📈 3. Interactive Visualizations
+# 🚀 Why DiabetesAI?
 
-The dashboard uses **Plotly** to provide interactive visual analysis.
+DiabetesAI demonstrates a complete machine-learning application workflow:
 
-#### Risk Probability Meter
-A radial gauge displays the predicted diabetes probability from 0% to 100%.
+```text
+Clinical Input
+      ↓
+Data Validation
+      ↓
+Feature Preparation
+      ↓
+Machine Learning Model
+      ↓
+Prediction + Probability
+      ↓
+Risk Classification
+      ↓
+Interactive Visualization
+      ↓
+Prediction History
+      ↓
+Downloadable Report
+```
 
-#### Relative Metric Spectrum
-A radar-style chart compares selected patient measurements after normalization against predefined reference bounds.
+Instead of presenting a machine-learning model as a notebook-only experiment, DiabetesAI integrates the model into an interactive application environment.
 
 ---
 
-### 🧠 4. Decision Context
+# ✨ Features
 
-The dashboard provides human-readable insights based on important patient measurements such as:
+<table>
+<tr>
+<td width="50%">
 
-- Glucose
-- BMI
-- Age
+### 🔮 Prediction Engine
 
-These messages provide context around factors associated with the displayed risk assessment.
+Enter eight patient measurements and execute a machine-learning risk assessment.
 
----
+**Includes:**
 
-### 📜 5. Prediction History
+* Clinical input form
+* Input validation
+* Model prediction
+* Probability calculation
+* Risk categorization
+* Confidence display
+* Patient metric visualization
+* Downloadable assessment report
 
-Every executed prediction can be recorded in:
+</td>
+
+<td width="50%">
+
+### 📊 Interactive Analytics
+
+Explore predictions and dataset characteristics through interactive visualizations.
+
+**Includes:**
+
+* Risk probability gauge
+* Radar-style metric visualization
+* Classification charts
+* Risk-tier distribution
+* Dataset statistics
+* Feature distributions
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 📜 Prediction History
+
+Every executed assessment can be stored locally.
 
 ```text
 prediction_history.csv
 ```
 
-The history contains:
+The registry records:
 
-- Timestamp
-- Patient features
-- Prediction
-- Probability
-- Risk level
+* Timestamp
+* Patient measurements
+* Prediction
+* Probability
+* Risk level
 
-The history page displays the records in a structured table and supports CSV export.
+</td>
+
+<td>
+
+### 🗂 Dataset Explorer
+
+Inspect the training dataset directly from the application.
+
+**Provides:**
+
+* Dataset dimensions
+* Class distribution
+* Raw records
+* Feature analysis
+* Interactive distributions
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 🤖 Model Architecture
+
+Dedicated model information page displaying:
+
+* Algorithm
+* Hyperparameters
+* Target variable
+* Feature count
+* Feature ordering
+* Serialized model information
+
+</td>
+
+<td>
+
+### 📚 Clinical Insights
+
+Educational contextual information based on selected measurements including:
+
+* Glucose
+* BMI
+* Age
+
+The purpose is to explain the displayed assessment rather than provide medical advice.
+
+</td>
+</tr>
+</table>
 
 ---
 
-### 🗂 6. Dataset Explorer
+# 🩺 Clinical Input Features
 
-The Dataset Explorer provides basic training-data inspection, including:
+The prediction engine accepts **8 numerical features**.
 
-- Total records
-- Total features
-- Positive instances
-- Raw dataset sample
-- Feature distribution visualization
+|  # | Feature                    | Description                  |
+| -: | -------------------------- | ---------------------------- |
+| 01 | `Pregnancies`              | Number of times pregnant     |
+| 02 | `Glucose`                  | Plasma glucose concentration |
+| 03 | `BloodPressure`            | Diastolic blood pressure     |
+| 04 | `SkinThickness`            | Triceps skin fold thickness  |
+| 05 | `Insulin`                  | 2-hour serum insulin         |
+| 06 | `BMI`                      | Body Mass Index              |
+| 07 | `DiabetesPedigreeFunction` | Diabetes pedigree score      |
+| 08 | `Age`                      | Patient age in years         |
+
+---
+
+# 🎯 Risk Classification
+
+DiabetesAI converts the calculated probability into four presentation-level risk categories.
+
+|   Probability | Risk Tier         |
+| ------------: | ----------------- |
+|    `0% – 30%` | 🟢 Low Risk       |
+|  `>30% – 60%` | 🟡 Moderate Risk  |
+|  `>60% – 80%` | 🟠 High Risk      |
+| `>80% – 100%` | 🔴 Very High Risk |
+
+The underlying classifier returns:
+
+```text
+0 → No diabetes classification
+1 → Diabetes classification
+```
+
+> **Important:** The risk tiers are application-level presentation categories and should not be interpreted as medically validated diagnostic thresholds.
+
+---
+
+# 📈 Interactive Visualization
+
+DiabetesAI uses **Plotly** to transform model outputs into interactive visual information.
+
+### 🎯 Risk Probability Gauge
+
+A radial gauge presents the model's calculated probability between:
+
+```text
+0% ─────────────────────────────── 100%
+```
+
+Users can visually inspect the estimated probability instead of relying only on a numerical value.
+
+### 🕸️ Relative Metric Spectrum
+
+Selected patient measurements are normalized against predefined reference bounds and displayed through a radar-style visualization.
+
+This provides a visual comparison of the entered measurements.
+
+---
+
+# 🧠 Decision Context
+
+The dashboard can generate human-readable contextual messages based on selected measurements.
+
+Examples of contextual variables include:
+
+```text
+Glucose
+BMI
+Age
+```
+
+These messages are intended to help users understand factors associated with the displayed model assessment.
+
+They are **educational explanations, not clinical recommendations**.
+
+---
+
+# 🤖 Machine Learning Model
+
+DiabetesAI uses a:
+
+## Decision Tree Classifier
+
+### Model Configuration
+
+| Parameter         | Configuration            |
+| ----------------- | ------------------------ |
+| Algorithm         | Decision Tree Classifier |
+| Max Depth         | `7`                      |
+| Min Samples Leaf  | `15`                     |
+| Min Samples Split | `2`                      |
+| Target            | `Outcome`                |
+| Input Features    | `8`                      |
+
+The application loads the serialized artifacts:
+
+```text
+diabetes_model.pkl
+diabetes_features.pkl
+```
+
+The stored feature-order information helps ensure that the model receives the expected input structure.
+
+---
+
+# 🏗️ System Architecture
+
+```text
+                         ┌────────────────────────┐
+                         │      USER / PATIENT    │
+                         └────────────┬───────────┘
+                                      │
+                                      ▼
+                         ┌────────────────────────┐
+                         │    STREAMLIT FRONTEND  │
+                         │  Forms + Validation UI │
+                         └────────────┬───────────┘
+                                      │
+                                      ▼
+                         ┌────────────────────────┐
+                         │   FEATURE PROCESSING   │
+                         │  8 Clinical Features  │
+                         └────────────┬───────────┘
+                                      │
+                                      ▼
+                         ┌────────────────────────┐
+                         │   DECISION TREE MODEL  │
+                         │ diabetes_model.pkl     │
+                         └────────────┬───────────┘
+                                      │
+                    ┌─────────────────┴─────────────────┐
+                    ▼                                   ▼
+          ┌──────────────────┐                ┌──────────────────┐
+          │   CLASSIFICATION │                │   PROBABILITY    │
+          │       0 / 1      │                │      0–100%      │
+          └─────────┬────────┘                └─────────┬────────┘
+                    │                                   │
+                    └─────────────────┬─────────────────┘
+                                      ▼
+                         ┌────────────────────────┐
+                         │    RISK ASSESSMENT    │
+                         │ Low / Moderate / High │
+                         │      / Very High      │
+                         └────────────┬───────────┘
+                                      │
+               ┌──────────────────────┼──────────────────────┐
+               ▼                      ▼                      ▼
+      ┌────────────────┐    ┌──────────────────┐    ┌────────────────┐
+      │ Plotly Charts  │    │ Prediction       │    │ CSV Report     │
+      │ Visualization  │    │ History          │    │ Download       │
+      └────────────────┘    └──────────────────┘    └────────────────┘
+```
+
+---
+
+# 🖥️ Application Modules
+
+| Module                | Purpose                                        |
+| --------------------- | ---------------------------------------------- |
+| 🏠 Overview           | Project introduction and system summary        |
+| 🔮 Prediction Engine  | Patient assessment and model prediction        |
+| 📊 Analytics Hub      | Prediction analytics and historical statistics |
+| 📜 Prediction History | Stored assessment registry                     |
+| 🗂 Dataset Explorer   | Dataset inspection and visualization           |
+| 🤖 Model Architecture | Model configuration and feature information    |
+| 📚 Clinical Insights  | Educational measurement context                |
+| ℹ️ About              | Project and technology information             |
+
+---
+
+# 📊 Dataset
 
 The supplied dataset contains:
 
-- **768 records**
-- **8 input features**
-- **1 target column**
-- **500 Outcome = 0**
-- **268 Outcome = 1**
+```text
+768 records
+8 input features
+1 target variable
+```
 
-Dataset columns:
+### Class Distribution
+
+| Outcome | Records |
+| ------: | ------: |
+|     `0` |     500 |
+|     `1` |     268 |
+
+### Dataset Columns
 
 ```text
 Pregnancies
@@ -150,268 +381,50 @@ Age
 Outcome
 ```
 
+The dataset is used by the **Dataset Explorer** for basic inspection and exploratory analysis.
+
 ---
 
-### 🤖 7. Model Architecture
+# 📜 Prediction History
 
-The application is configured to use a **Decision Tree Classifier**.
-
-Model configuration displayed by the application:
-
-| Parameter | Value |
-|---|---|
-| Algorithm | Decision Tree Classifier |
-| Max Depth | 7 |
-| Min Samples Leaf | 15 |
-| Min Samples Split | 2 |
-| Target Variable | Outcome |
-| Feature Count | 8 |
-
-The application loads the serialized model and feature ordering from:
+Each executed assessment can be stored in:
 
 ```text
-diabetes_model.pkl
-diabetes_features.pkl
+prediction_history.csv
 ```
 
----
-
-## 🏗️ Application Architecture
+### Stored Information
 
 ```text
-                    ┌──────────────────────────┐
-                    │       User Input         │
-                    │  8 Clinical Measurements │
-                    └────────────┬─────────────┘
-                                 │
-                                 ▼
-                    ┌──────────────────────────┐
-                    │     Streamlit UI Layer   │
-                    │ Validation + Form Inputs │
-                    └────────────┬─────────────┘
-                                 │
-                                 ▼
-                    ┌──────────────────────────┐
-                    │   Decision Tree Model    │
-                    │   diabetes_model.pkl     │
-                    └────────────┬─────────────┘
-                                 │
-                     ┌───────────┴───────────┐
-                     ▼                       ▼
-              ┌──────────────┐       ┌──────────────┐
-              │ Prediction   │       │ Probability  │
-              │   0 / 1      │       │   0–100%     │
-              └──────┬───────┘       └──────┬───────┘
-                     │                       │
-                     └───────────┬───────────┘
-                                 ▼
-                    ┌──────────────────────────┐
-                    │      Risk Assessment     │
-                    │ Low / Moderate / High /  │
-                    │       Very High Risk     │
-                    └────────────┬─────────────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              ▼                  ▼                  ▼
-       ┌────────────┐     ┌────────────┐     ┌─────────────┐
-       │ Plotly      │     │ Prediction │     │ CSV Report  │
-       │ Visuals     │     │ History    │     │ Download    │
-       └────────────┘     └────────────┘     └─────────────┘
+Timestamp
+Pregnancies
+Glucose
+BloodPressure
+SkinThickness
+Insulin
+BMI
+DiabetesPedigreeFunction
+Age
+Prediction
+Probability
+Risk Level
 ```
 
----
-
-## 🖥️ Dashboard Pages
-
-The application contains the following navigation sections:
-
-1. **🏠 Overview**
-   - Project introduction
-   - Core feature scope
-   - High-level system information
-
-2. **🔮 Prediction Engine**
-   - Patient clinical inputs
-   - Risk calculation
-   - Classification result
-   - Interactive visualizations
-   - Clinical summary export
-
-3. **📊 Analytics Hub**
-   - Total assessments
-   - Positive and negative classifications
-   - Mean risk score
-   - Historical classification charts
-   - Risk-tier distribution
-
-4. **📜 Prediction History**
-   - Stored assessment records
-   - Historical registry
-   - CSV export
-
-5. **🗂 Dataset Explorer**
-   - Dataset statistics
-   - Raw data sample
-   - Feature distribution charts
-
-6. **🤖 Model Architecture**
-   - Algorithm details
-   - Hyperparameter configuration
-   - Feature ordering
-
-7. **📚 Clinical Insights**
-   - Educational information about major diabetes-related measurements
-
-8. **ℹ️ About**
-   - Project and technology information
+The history interface provides structured records and CSV export functionality.
 
 ---
 
-## 🧰 Technologies Used
+# 📄 Downloadable Reports
 
-| Technology | Purpose |
-|---|---|
-| Python | Application and ML integration |
-| Streamlit | Interactive web dashboard |
-| Pandas | Data manipulation |
-| NumPy | Numerical operations |
-| Scikit-Learn | Machine-learning model |
-| Plotly Express | Interactive charts |
-| Plotly Graph Objects | Gauge and radar-style visualizations |
-| Pickle | Loading serialized ML model artifacts |
-| CSS / HTML | Dashboard styling and theme |
+After an assessment, DiabetesAI can generate a downloadable CSV summary.
 
----
-
-## 📁 Project Structure
-
-A typical project directory can be organized as:
+Example:
 
 ```text
-DiabetesAI/
-│
-├── app.py
-├── diabetes.csv
-├── diabetes_model.pkl
-├── diabetes_features.pkl
-├── prediction_history.csv
-├── README.md
-│
-└── assets/
-    └── (optional project assets)
+DiabetesAI_Report_20260929_233000.csv
 ```
 
-### File descriptions
-
-| File | Purpose |
-|---|---|
-| `app.py` | Main Streamlit application |
-| `diabetes.csv` | Diabetes dataset used for dataset exploration |
-| `diabetes_model.pkl` | Serialized Decision Tree model |
-| `diabetes_features.pkl` | Stored feature ordering used by the model |
-| `prediction_history.csv` | Historical prediction records |
-| `README.md` | Project documentation |
-
-`prediction_history.csv` is automatically created by the application when it does not already exist.
-
----
-
-## ⚙️ Installation
-
-### 1. Clone the repository
-
-```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
-cd DiabetesAI
-```
-
-### 2. Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-### 3. Activate the environment
-
-#### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-#### macOS / Linux
-
-```bash
-source venv/bin/activate
-```
-
-### 4. Install dependencies
-
-```bash
-pip install streamlit pandas numpy scikit-learn plotly
-```
-
----
-
-## ▶️ Run the Application
-
-Start the Streamlit application with:
-
-```bash
-streamlit run app.py
-```
-
-After startup, open the local Streamlit address shown in the terminal, typically:
-
-```text
-http://localhost:8501
-```
-
----
-
-## 🔐 Required Model Files
-
-Before running the application, make sure these files are available in the same working directory as `app.py`:
-
-```text
-diabetes_model.pkl
-diabetes_features.pkl
-```
-
-The application loads them during startup.
-
-If either file is missing or cannot be loaded, the application displays a critical model-loading error and stops execution.
-
----
-
-## 🧪 Dataset
-
-The supplied diabetes dataset contains **768 patient records** and **9 columns**:
-
-- 8 predictive features
-- 1 target variable (`Outcome`)
-
-### Target Variable
-
-```text
-Outcome = 0
-Outcome = 1
-```
-
-Dataset distribution:
-
-```text
-Outcome 0 → 500 records
-Outcome 1 → 268 records
-```
-
-The dataset is used by the Dataset Explorer for analysis and inspection.
-
----
-
-## 📄 Prediction Report
-
-After an assessment, the application generates a downloadable CSV summary containing information such as:
+The report can contain:
 
 ```text
 Patient Classification
@@ -426,130 +439,454 @@ Pedigree Function
 Assessment Timestamp
 ```
 
-The generated filename follows the pattern:
+---
+
+# 🧰 Technology Stack
+
+<div align="center">
+
+| Technology          | Role                        |
+| ------------------- | --------------------------- |
+| 🐍 **Python**       | Application development     |
+| 🎈 **Streamlit**    | Interactive web application |
+| 🐼 **Pandas**       | Data manipulation           |
+| 🔢 **NumPy**        | Numerical computation       |
+| 🤖 **Scikit-Learn** | Machine learning            |
+| 📊 **Plotly**       | Interactive visualization   |
+| 🎨 **CSS / HTML**   | UI customization            |
+| 📦 **Pickle**       | Model artifact loading      |
+
+</div>
+
+---
+
+# 📁 Project Structure
 
 ```text
-DiabetesAI_Report_YYYYMMDD_HHMMSS.csv
+DiabetesAI/
+│
+├── 📄 app.py
+│
+├── 📊 diabetes.csv
+│
+├── 🤖 diabetes_model.pkl
+│
+├── 🧩 diabetes_features.pkl
+│
+├── 📜 prediction_history.csv
+│
+├── 📘 README.md
+│
+└── 📂 assets/
+    └── screenshots/
+```
+
+### File Responsibilities
+
+| File                     | Responsibility                                 |
+| ------------------------ | ---------------------------------------------- |
+| `app.py`                 | Main Streamlit application                     |
+| `diabetes.csv`           | Training dataset / dataset exploration         |
+| `diabetes_model.pkl`     | Serialized Decision Tree model                 |
+| `diabetes_features.pkl`  | Stored model feature ordering                  |
+| `prediction_history.csv` | Local prediction registry                      |
+| `README.md`              | Project documentation                          |
+| `assets/`                | Optional project screenshots and visual assets |
+
+`prediction_history.csv` is automatically created when it does not already exist.
+
+---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone <YOUR-GITHUB-REPOSITORY-URL>
+cd DiabetesAI
+```
+
+## 2️⃣ Create Virtual Environment
+
+### Windows
+
+```bash
+python -m venv venv
+```
+
+Activate:
+
+```bash
+venv\Scripts\activate
+```
+
+### macOS / Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 ---
 
-## 📊 Example Workflow
+## 3️⃣ Install Dependencies
+
+```bash
+pip install streamlit pandas numpy scikit-learn plotly
+```
+
+Or create a `requirements.txt`:
 
 ```text
-Launch Application
-       │
-       ▼
-Open Prediction Engine
-       │
-       ▼
-Enter Patient Measurements
-       │
-       ▼
-Click "Execute Risk Analysis"
-       │
-       ▼
-Decision Tree Prediction
-       │
-       ├──────────────► Classification
-       │
-       ├──────────────► Diabetes Probability
-       │
-       ├──────────────► Risk Category
-       │
-       └──────────────► Confidence
-       │
-       ▼
-View Interactive Charts
-       │
-       ▼
-Download Clinical Summary
-       │
-       ▼
-Prediction Stored in History
+streamlit
+pandas
+numpy
+scikit-learn
+plotly
+```
+
+Then:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ---
 
-## 🎯 Project Objectives
+# ▶️ Run DiabetesAI
 
-The main objectives of DiabetesAI are:
+Start the application:
 
-- Build a user-friendly machine-learning dashboard for diabetes risk assessment.
-- Demonstrate integration of a trained classification model with Streamlit.
-- Visualize model outputs using interactive charts.
-- Maintain a local prediction history.
-- Provide basic exploratory dataset analysis.
-- Demonstrate how machine learning can be integrated into a healthcare-oriented decision-support interface.
-- Present model information and feature inputs in a professional dashboard.
+```bash
+streamlit run app.py
+```
 
----
+The terminal will provide a local address similar to:
 
-## 🔮 Future Enhancements
+```text
+http://localhost:8501
+```
 
-Possible improvements include:
-
-- Model comparison using Random Forest, Logistic Regression, XGBoost, and other classifiers
-- Cross-validation and model-performance reporting
-- ROC-AUC, precision, recall, F1-score, and confusion-matrix analysis
-- SHAP-based feature explanations
-- More advanced patient trend analytics
-- Database-backed prediction history
-- User authentication and role-based access
-- PDF report generation
-- Cloud deployment
-- API-based model serving
-- Model monitoring and drift detection
-- Improved clinical validation workflows
+Open that address in your browser.
 
 ---
 
-## ⚠️ Medical Disclaimer
+# 🔐 Required Model Artifacts
 
-**DiabetesAI is an educational and portfolio project.**
+Before launching the application, verify that these files exist beside `app.py`:
 
-The predictions generated by this software are based on a machine-learning model and should **not** be interpreted as a clinical diagnosis, medical recommendation, or treatment decision.
+```text
+diabetes_model.pkl
+diabetes_features.pkl
+```
 
-Do not use this application to make decisions about medication, treatment, or personal medical care.
+Expected structure:
+
+```text
+DiabetesAI/
+├── app.py
+├── diabetes_model.pkl
+└── diabetes_features.pkl
+```
+
+If the model artifacts cannot be loaded, the application should display a model-loading error rather than attempting to generate an invalid prediction.
+
+---
+
+# 🧪 Example Workflow
+
+```text
+┌─────────────────────┐
+│ Launch DiabetesAI   │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Prediction Engine   │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Enter Measurements  │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Execute Assessment  │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Decision Tree Model │
+└──────────┬──────────┘
+           ▼
+     ┌─────┴─────┐
+     ▼           ▼
+┌──────────┐ ┌────────────┐
+│Classify  │ │Probability │
+└────┬─────┘ └──────┬─────┘
+     └──────┬───────┘
+            ▼
+┌─────────────────────┐
+│ Risk Classification │
+└──────────┬──────────┘
+           ▼
+┌─────────────────────┐
+│ Interactive Charts  │
+└──────────┬──────────┘
+           ▼
+     ┌─────┴──────┐
+     ▼            ▼
+┌──────────┐ ┌───────────┐
+│ History  │ │ CSV Report│
+└──────────┘ └───────────┘
+```
+
+---
+
+# 🎯 Project Objectives
+
+DiabetesAI was developed to demonstrate:
+
+* Integration of machine learning into an interactive application
+* Healthcare-oriented predictive analytics
+* Model inference through Streamlit
+* Interactive data visualization
+* Local prediction-history management
+* Dataset exploration
+* Model configuration transparency
+* Downloadable analytical reports
+* Professional ML application design
+
+---
+
+# 🔮 Future Roadmap
+
+The project can be extended with:
+
+### 🤖 Machine Learning
+
+* [ ] Random Forest comparison
+* [ ] Logistic Regression comparison
+* [ ] XGBoost experimentation
+* [ ] Cross-validation
+* [ ] Hyperparameter optimization
+* [ ] ROC-AUC analysis
+* [ ] Precision / Recall / F1 analysis
+* [ ] Confusion matrix
+
+### 🧠 Explainable AI
+
+* [ ] SHAP explanations
+* [ ] Feature importance dashboard
+* [ ] Individual prediction explanation
+* [ ] Model decision-path visualization
+
+### 🏗️ Engineering
+
+* [ ] REST API model serving
+* [ ] Database-backed prediction history
+* [ ] User authentication
+* [ ] Role-based access
+* [ ] Cloud deployment
+* [ ] Automated testing
+* [ ] CI/CD pipeline
+* [ ] Model monitoring
+* [ ] Data drift detection
+
+### 📄 Reporting
+
+* [ ] PDF assessment reports
+* [ ] Automated report generation
+* [ ] Advanced patient trend analytics
+
+---
+
+# 📸 Screenshots
+
+Add your actual application screenshots here:
+
+### 🏠 Dashboard
+
+```text
+assets/screenshots/dashboard.png
+```
+
+### 🔮 Prediction Engine
+
+```text
+assets/screenshots/prediction-engine.png
+```
+
+### 📊 Analytics Hub
+
+```text
+assets/screenshots/analytics.png
+```
+
+### 🤖 Model Architecture
+
+```text
+assets/screenshots/model.png
+```
+
+Once uploaded to GitHub, you can display them using:
+
+```markdown
+![DiabetesAI Dashboard](assets/screenshots/dashboard.png)
+```
+
+---
+
+# 🔬 Machine Learning Pipeline
+
+```text
+                 ┌─────────────────┐
+                 │ Diabetes Dataset│
+                 └────────┬────────┘
+                          ▼
+                ┌──────────────────┐
+                │ Data Preparation │
+                └────────┬─────────┘
+                         ▼
+                ┌──────────────────┐
+                │ Feature Selection│
+                └────────┬─────────┘
+                         ▼
+                ┌──────────────────┐
+                │ Decision Tree    │
+                │   Classifier     │
+                └────────┬─────────┘
+                         ▼
+                ┌──────────────────┐
+                │ Model Serialization
+                └────────┬─────────┘
+                         ▼
+                ┌──────────────────┐
+                │ Streamlit App    │
+                └────────┬─────────┘
+                         ▼
+                ┌──────────────────┐
+                │ User Assessment  │
+                └────────┬─────────┘
+                         ▼
+             ┌───────────┴───────────┐
+             ▼                       ▼
+      Classification          Probability
+             │                       │
+             └───────────┬───────────┘
+                         ▼
+                 Risk Presentation
+```
+
+---
+
+# 🛡️ Medical Disclaimer
+
+> **DiabetesAI is an educational and portfolio project.**
+
+The predictions produced by this application are generated by a machine-learning model and **must not be interpreted as a medical diagnosis, treatment recommendation, or clinical decision**.
+
+The application has not been presented here as a clinically validated diagnostic tool.
+
+Do not use DiabetesAI to make decisions regarding:
+
+* Medication
+* Treatment
+* Diagnosis
+* Emergency care
+* Personal medical management
 
 For real-world medical concerns, consult a qualified healthcare professional.
 
 ---
 
-## 👨‍💻 Project Information
+# 📌 Project Information
 
-**Project Name:** DiabetesAI — Medical Intelligence Dashboard
-
-**Application Type:** Machine Learning + Healthcare Analytics Dashboard
-
-**Primary Framework:** Streamlit
-
-**Machine Learning Algorithm:** Decision Tree Classifier
-
-**Input Features:** 8
-
-**Target:** `Outcome`
-
----
-
-## 📜 License
-
-This project can be used for educational and portfolio purposes. Add an appropriate open-source license, such as MIT, to the repository if you intend to distribute the project publicly.
+| Property            | Details                                 |
+| ------------------- | --------------------------------------- |
+| **Project**         | DiabetesAI                              |
+| **Category**        | Machine Learning / Healthcare Analytics |
+| **Application**     | Interactive Web Dashboard               |
+| **Framework**       | Streamlit                               |
+| **Language**        | Python                                  |
+| **Model**           | Decision Tree Classifier                |
+| **Input Features**  | 8                                       |
+| **Target**          | `Outcome`                               |
+| **Visualization**   | Plotly                                  |
+| **Data Processing** | Pandas / NumPy                          |
 
 ---
 
-## ⭐ Acknowledgement
+# 🌟 Learning Outcomes
 
-This project demonstrates the integration of:
+This project demonstrates practical experience with:
 
 ```text
-Machine Learning
-        +
-Healthcare Analytics
-        +
-Data Visualization
-        +
-Interactive Web Application
+Python
+   │
+   ├── Data Processing
+   ├── Machine Learning
+   ├── Model Serialization
+   ├── Prediction Pipelines
+   │
+   └── Streamlit
+          │
+          ├── Interactive UI
+          ├── Session State
+          ├── Data Visualization
+          ├── File Downloads
+          └── Application Architecture
 ```
 
-to create a practical educational prototype for diabetes risk assessment.
+It bridges the gap between a trained ML model and a usable application interface.
+
+---
+
+# 📜 License
+
+This project is intended primarily for educational and portfolio use.
+
+If distributing the project publicly, an appropriate open-source license such as **MIT** can be added.
+
+---
+
+# 👨‍💻 Author
+
+### Hadi Inamdar
+
+**AI & Data Science | Machine Learning | Python | Data Analytics**
+
+Interested in building practical AI/ML applications that transform machine-learning models into usable software systems.
+
+---
+
+# ⭐ Support the Project
+
+If you find this project useful:
+
+⭐ Star the repository
+🍴 Fork the repository
+🐛 Report issues
+💡 Suggest improvements
+🔧 Contribute enhancements
+
+---
+
+<p align="center">
+
+### 🩸 DiabetesAI
+
+**Machine Learning × Healthcare Analytics × Interactive Visualization**
+
+<br>
+
+`Built with Python • Streamlit • Scikit-Learn • Pandas • NumPy • Plotly`
+
+</p>
+
+---
+
+<p align="center">
+  <sub>
+    Built as an educational machine-learning application.
+    <br>
+    Not intended for clinical diagnosis or medical decision-making.
+  </sub>
+</p>
